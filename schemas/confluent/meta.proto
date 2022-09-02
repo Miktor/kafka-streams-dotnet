@@ -1,0 +1,19 @@
+syntax = "proto3";
+package confluent;
+
+import "google/protobuf/descriptor.proto";
+
+option java_package = "io.confluent.protobuf";
+option java_outer_classname = "MetaProto";
+
+message Meta {
+    string doc = 1;
+    repeated .confluent.Meta.ParamsEntry params = 2;
+
+    message ParamsEntry {
+        option map_entry = true;
+
+        string key = 1;
+        string value = 2;
+    }
+}

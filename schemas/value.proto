@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "confluent/type/decimal.proto";
+
+message test_message {
+    int32 INT_VALUE = 1;
+    confluent.type.Decimal DECIMAL_VALUE = 10;
+}
